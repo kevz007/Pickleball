@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ext-resource-dependency" content="./images/hero-home.png" data-resource-id="img_images_hero_home_png">
+<meta name="ext-resource-dependency" content="./images/coach-photo.webp" data-resource-id="img_images_coach_photo_webp">
+<meta name="ext-resource-dependency" content="./images/offer-1.webp" data-resource-id="img_images_offer_1_webp">
+<meta name="ext-resource-dependency" content="./images/offer-2.webp" data-resource-id="img_images_offer_2_webp">
+<meta name="ext-resource-dependency" content="./images/offer-3.webp" data-resource-id="img_images_offer_3_webp">
+<meta name="ext-resource-dependency" content="./images/offer-4.webp" data-resource-id="img_images_offer_4_webp">
+<meta name="ext-resource-dependency" content="./images/offer-5.webp" data-resource-id="img_images_offer_5_webp">
+<meta name="ext-resource-dependency" content="./images/offer-6.webp" data-resource-id="img_images_offer_6_webp">
+<meta name="ext-resource-dependency" content="./images/offer-7.webp" data-resource-id="img_images_offer_7_webp">
+<meta name="ext-resource-dependency" content="./images/offer-8.webp" data-resource-id="img_images_offer_8_webp">
+<template id="__bundler_thumbnail" data-bg-color="#FBF4EC"><svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><circle cx="200" cy="200" r="90" fill="#C6E03A"/><path d="M130 160 Q200 200 270 160 M130 240 Q200 200 270 240" stroke="#FBF4EC" stroke-width="8" fill="none"/><circle cx="170" cy="190" r="8" fill="#0E7C86"/><circle cx="230" cy="215" r="8" fill="#0E7C86"/><circle cx="200" cy="160" r="8" fill="#0E7C86"/></svg></template>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&family=Yellowtail&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/InertiaPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="./image-slot-standalone.js"></script>
+<style>
+html,body{margin:0;background:#FBF4EC;color:#141414;-webkit-font-smoothing:antialiased}
+body{overflow-x:clip}
+*{box-sizing:border-box}
+a{color:#0E7C86;text-decoration:none}
+a:hover{color:#F0592A}
+::selection{background:#F4B63A;color:#141414}
+</style>
+</helmet>
+
+<div style="font-family:'DM Sans',sans-serif;background:#FBF4EC;position:relative;overflow-x:clip">
+
+<sc-if value="{{ showCursor }}" hint-placeholder-val="{{ false }}">
+  <div data-g="cursor" style="position:fixed;left:0;top:0;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#F0592A;pointer-events:none;z-index:9999;mix-blend-mode:multiply"></div>
+</sc-if>
+
+<!-- NAV -->
+<header style="position:sticky;top:0;z-index:50;padding:14px clamp(16px,4vw,48px)">
+  <nav data-g="nav" style="max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:clamp(10px,2vw,24px);padding:8px 8px 8px clamp(12px,2vw,20px);border-radius:999px;background:rgba(251,244,236,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(20,20,20,.06)">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;color:#141414">
+      <span style="position:relative;width:34px;height:34px;border-radius:50%;background:#F4B63A;display:grid;place-items:center">
+        <span style="position:absolute;width:18px;height:34px;left:0;top:0;border-radius:34px 0 0 34px;background:#0E7C86"></span>
+        <span style="position:relative;width:8px;height:8px;border-radius:50%;background:#FBF4EC"></span>
+      </span>
+      <span style="display:flex;flex-direction:column;line-height:.95;font-family:Outfit,sans-serif">
+        <span style="font-weight:800;font-size:18px;letter-spacing:.02em">CEBU</span>
+        <span style="font-weight:500;font-size:11px;letter-spacing:.24em">PICKLEBALL COURT</span>
+      </span>
+    </a>
+    <sc-if value="{{ showNavLinks }}" hint-placeholder-val="{{ true }}"><div style="display:flex;gap:clamp(14px,2.4vw,34px);font-family:Outfit,sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;flex-wrap:wrap;justify-content:center;flex:1 1 0;min-width:0;height:18px;overflow:hidden">
+      <a href="About Us.dc.html" style="color:#141414">ABOUT US</a>
+      <a href="Courts and Pricing.dc.html" style="color:#141414">COURTS &amp; PRICING</a>
+      <a href="Contact Us.dc.html" style="color:#141414">CONTACT US</a>
+    </div></sc-if>
+    <a href="Book a Court.dc.html" style="display:flex;align-items:center;gap:10px;background:#F0592A;color:#fff;padding:13px 22px;border-radius:999px;font-family:Outfit,sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;white-space:nowrap;flex:none;padding:clamp(10px,1.2vw,13px) clamp(14px,1.8vw,22px);font-size:clamp(11px,1vw,13px);transition:transform .3s" style-hover="transform:translateY(-2px);background:#141414;color:#fff">BOOK A COURT <span>→</span></a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="top" data-g="hero" style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(24px,5vw,56px) clamp(16px,4vw,48px) clamp(60px,8vw,110px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(32px,4vw,64px);align-items:center">
+  <svg data-g="squiggle" viewBox="0 0 120 80" style="position:absolute;left:-10px;bottom:30px;width:110px;overflow:visible;pointer-events:none"><path d="M4 40 C20 4 34 4 38 40 S58 76 66 40 S88 4 96 40 S112 70 118 50" fill="none" stroke="#F4B63A" strokeWidth="5" strokeLinecap="round"></path></svg>
+  <div style="position:absolute;left:clamp(0px,1vw,16px);top:180px;display:grid;grid-template-columns:repeat(3,6px);gap:12px;opacity:.7">
+    <span style="width:6px;height:6px;border-radius:50%;background:#0E7C86"></span><span style="width:6px;height:6px;border-radius:50%;background:#0E7C86"></span><span style="width:6px;height:6px;border-radius:50%;background:#0E7C86"></span>
+    <span style="width:6px;height:6px;border-radius:50%;background:#0E7C86"></span><span style="width:6px;height:6px;border-radius:50%;background:#0E7C86"></span><span style="width:6px;height:6px;border-radius:50%;background:#0E7C86"></span>
+    <span style="width:6px;height:6px;border-radius:50%;background:#0E7C86"></span><span style="width:6px;height:6px;border-radius:50%;background:#0E7C86"></span><span style="width:6px;height:6px;border-radius:50%;background:#0E7C86"></span>
+  </div>
+
+  <div style="position:relative;z-index:2;padding-left:clamp(0px,3vw,40px)">
+    <p data-g="hero-fade" style="margin:0 0 22px;font-family:Outfit,sans-serif;font-weight:600;font-size:15px;letter-spacing:.14em;color:#0E7C86">DINK. DRIVE. REPEAT.</p>
+    <h1 style="margin:0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(46px,8.4vw,128px);line-height:.92;letter-spacing:-.035em;position:relative">
+      <span data-g="split" style="display:block">Pickleball</span>
+      <span style="display:flex;align-items:baseline;gap:.18em;flex-wrap:wrap">
+        <span data-g="split">That</span>
+        <span data-g="script" style="position:relative;display:inline-block;font-family:Yellowtail,cursive;font-weight:400;color:#0E7C86;font-size:1.12em;letter-spacing:0;padding:0 .12em .1em 0;line-height:1">Pops
+          <svg viewBox="0 0 300 30" preserveAspectRatio="none" style="position:absolute;left:-2%;bottom:-.08em;width:104%;height:.22em;overflow:visible"><path data-g="underline" d="M4 22 C80 6 180 4 296 14" fill="none" stroke="#F4B63A" strokeWidth="7" strokeLinecap="round"></path></svg>
+        </span>
+      </span>
+      <svg data-g="spark" viewBox="0 0 40 40" style="position:absolute;right:clamp(0px,4vw,60px);top:-10px;width:clamp(22px,2.4vw,34px)"><path d="M20 0 C22 14 26 18 40 20 C26 22 22 26 20 40 C18 26 14 22 0 20 C14 18 18 14 20 0Z" fill="#F0592A"></path></svg>
+    </h1>
+    <p data-g="hero-fade" style="margin:32px 0 0;max-width:430px;font-size:clamp(16px,1.3vw,19px);line-height:1.6;color:#3a3a3a;text-wrap:pretty">Twelve cushioned courts, coaches who remember your name, and a crew that turns first-timers into regulars by week two.</p>
+    <div data-g="hero-fade" style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;align-items:center">
+      <a href="Courts and Pricing.dc.html" style="display:flex;align-items:center;gap:12px;background:#0E7C86;color:#fff;padding:17px 28px;border-radius:999px;font-family:Outfit,sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;transition:transform .3s" style-hover="transform:translateY(-3px);color:#fff;background:#141414">COURTS &amp; PRICING <span>→</span></a>
+      <a href="Book a Court.dc.html" style="display:flex;align-items:center;gap:12px;color:#141414;padding:11px 22px 11px 11px;border-radius:999px;border:1px solid rgba(20,20,20,.12);background:#fff;font-family:Outfit,sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em" style-hover="color:#F0592A">
+        <span style="width:34px;height:34px;border-radius:50%;background:#FDE3D8;display:grid;place-items:center"><svg viewBox="0 0 24 16" style="width:20px"><rect x="1" y="1" width="22" height="14" rx="1.5" fill="#F0592A" stroke="#141414" strokeWidth="1.5"></rect><line x1="12" y1="1" x2="12" y2="15" stroke="#fff" strokeWidth="1.6"></line><line x1="8.5" y1="1" x2="8.5" y2="15" stroke="#fff" strokeWidth="1"></line><line x1="15.5" y1="1" x2="15.5" y2="15" stroke="#fff" strokeWidth="1"></line><line x1="1" y1="8" x2="8.5" y2="8" stroke="#fff" strokeWidth="1"></line><line x1="15.5" y1="8" x2="23" y2="8" stroke="#fff" strokeWidth="1"></line></svg></span>BOOK A COURT
+      </a>
+    </div>
+  </div>
+
+  <div data-g="hero-visual" style="position:relative;aspect-ratio:1/1.02;width:100%;max-width:620px;justify-self:center">
+    <div style="position:absolute;right:-6%;top:-4%;width:78%;aspect-ratio:1;border-radius:50%;background:#F9CDB8"></div>
+    <svg data-g="sunburst" viewBox="-100 -100 200 200" style="position:absolute;right:0;top:4%;width:40%;overflow:visible">
+      <sc-for list="{{ rays }}" as="r" hint-placeholder-count="0"><line x1="{{ r.x1 }}" y1="{{ r.y1 }}" x2="{{ r.x2 }}" y2="{{ r.y2 }}" stroke="#F4B63A" strokeWidth="5" strokeLinecap="round"></line></sc-for>
+    </svg>
+    <svg viewBox="0 0 500 500" style="position:absolute;left:-8%;bottom:-10%;width:92%;overflow:visible"><path data-g="heroBlob" d="M421,302Q396,354,352,392Q308,430,247,437Q186,444,137,406Q88,368,66,309Q44,250,63,187Q82,124,137,90Q192,56,254,57Q316,58,366,95Q416,132,431,191Q446,250,421,302Z" fill="#0E7C86"></path></svg>
+    <div style="position:absolute;left:12%;top:10%;width:78%;aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 40px 80px -30px rgba(14,124,134,.5)">
+      <image-slot id="hero-player" src="images/hero-home.png" shape="rect" placeholder="Drop a player photo (portrait, mid-swing)"></image-slot>
+    </div>
+    <div data-g="badge" style="position:absolute;left:0;top:44%;width:clamp(84px,11vw,138px);aspect-ratio:1;border-radius:50%;background:#fff;box-shadow:0 20px 40px -18px rgba(0,0,0,.25);display:grid;place-items:center">
+      <svg data-g="badge-ring" viewBox="0 0 100 100" style="position:absolute;inset:6%;width:88%;height:88%">
+        <defs><path id="ring" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"></path></defs>
+        <text style="font-family:Outfit,sans-serif;font-weight:700;font-size:10.4px;letter-spacing:2.4px;fill:#141414"><textPath href="#ring" textLength="236" lengthAdjust="spacing">PLAY WITH STYLE AND PURPOSE ✺ </textPath></text>
+      </svg>
+      <span style="width:26%;aspect-ratio:1;border-radius:50%;background:#F0592A"></span>
+    </div>
+    <div data-g="ball" style="position:absolute;right:4%;bottom:4%;width:clamp(78px,8vw,108px);aspect-ratio:1;z-index:5;cursor:grab;touch-action:none">
+      <svg data-g="ball-inner" viewBox="0 0 100 100" style="width:100%;height:100%;display:block;filter:drop-shadow(0 18px 18px rgba(0,0,0,.22))">
+        <circle cx="50" cy="50" r="48" fill="#F4C542"></circle>
+        <circle cx="42" cy="38" r="40" fill="#F8D35E"></circle>
+        <sc-for list="{{ holes }}" as="h" hint-placeholder-count="0"><circle cx="{{ h.x }}" cy="{{ h.y }}" r="{{ h.r }}" fill="#C98E14"></circle></sc-for>
+      </svg>
+    </div>
+    <div data-g="ball-hint" style="position:absolute;right:-2%;bottom:-9%;font-family:Yellowtail,cursive;font-size:clamp(18px,2vw,22px);color:#F0592A;transform:rotate(-6deg);white-space:nowrap">drag &amp; throw me ↑</div>
+  </div>
+</section>
+
+<!-- COACH CARD -->
+<section id="club" style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,4vw,48px)">
+  <div data-g="reveal" style="background:#fff;border-radius:32px;padding:clamp(18px,2.4vw,28px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(24px,3vw,48px);align-items:center;box-shadow:0 30px 70px -40px rgba(0,0,0,.18)">
+    <div style="position:relative;aspect-ratio:4/3;border-radius:22px;overflow:hidden;background:#F9CDB8">
+      <div style="position:absolute;left:-30px;top:-30px;width:120px;height:120px;border-radius:50%;background:#F4B63A;z-index:1"></div>
+      <image-slot id="coach-photo" src="images/coach-photo.webp" shape="rect" placeholder="Drop a photo of the courts"></image-slot>
+    </div>
+    <div>
+      <p style="margin:0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(22px,2.2vw,30px);color:#0E7C86">ABOUT US</p>
+      <p style="margin:6px 0 0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(22px,2.2vw,30px);line-height:1.15">BUILT FOR PICKLEBALL PLAYERS IN CEBU</p>
+      <p style="margin:18px 0 0;font-size:16px;line-height:1.65;color:#3a3a3a;max-width:420px;text-wrap:pretty">Four quality courts, easy online booking and a friendly crowd. Book a court, bring your crew and play — we take care of the rest.</p>
+      <p style="margin:14px 0 0;font-family:Yellowtail,cursive;font-size:38px;color:#141414">See you on court <span style="color:#0E7C86;font-size:26px">♡</span></p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;border-left:1px solid rgba(20,20,20,.1);padding-left:clamp(16px,3vw,40px)">
+      <sc-for list="{{ coachList }}" as="c" hint-placeholder-count="5">
+        <div style="display:flex;align-items:center;gap:14px;font-family:Outfit,sans-serif;font-weight:600;font-size:16px">
+          <span style="width:30px;height:30px;border-radius:50%;background:#0E7C86;color:#fff;display:grid;place-items:center;font-size:11px;font-weight:700">{{ c.n }}</span>{{ c.t }}
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- HORIZONTAL PROGRAMS -->
+<section id="programs" data-g="hscroll" style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(60px,8vw,100px) 0;overflow:hidden">
+  <svg data-g="asterisk" viewBox="0 0 100 100" style="position:absolute;right:3%;top:8%;width:clamp(70px,8vw,116px);overflow:visible;filter:drop-shadow(0 14px 14px rgba(0,0,0,.18))"><circle cx="50" cy="50" r="48" fill="#C6DC3A"></circle><circle cx="42" cy="38" r="40" fill="#D6E85A"></circle><sc-for list="{{ holes }}" as="h" hint-placeholder-count="0"><circle cx="{{ h.x }}" cy="{{ h.y }}" r="{{ h.r }}" fill="#8FA61E"></circle></sc-for></svg>
+  <div style="max-width:1320px;width:100%;margin:0 auto;padding:0 clamp(16px,4vw,48px) 36px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
+    <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(40px,5.6vw,84px);line-height:.95;letter-spacing:-.03em">What We<br><span style="font-family:Yellowtail,cursive;font-weight:400;color:#F0592A;letter-spacing:0">offer</span></h2>
+    <div style="display:flex;align-items:center;gap:16px;font-family:Outfit,sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;color:#0E7C86">
+      <span>SCROLL TO RALLY</span>
+      <span style="width:140px;height:4px;border-radius:4px;background:rgba(14,124,134,.18);overflow:hidden"><span data-g="hbar" style="display:block;width:100%;height:100%;background:#0E7C86;transform-origin:left;transform:scaleX(0)"></span></span>
+    </div>
+  </div>
+  <div data-g="htrack" style="display:flex;gap:clamp(16px,2vw,28px);padding:0 clamp(16px,4vw,48px);width:max-content">
+    <sc-for list="{{ programs }}" as="p" hint-placeholder-count="6">
+      <article data-g="hcard" style="position:relative;width:clamp(280px,26vw,380px);background:#fff;border-radius:28px;padding:22px;display:flex;flex-direction:column;gap:18px;border:1px solid rgba(20,20,20,.07);box-shadow:0 30px 60px -40px rgba(0,0,0,.25)">
+        <div>
+          <p style="margin:0;font-family:Outfit,sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;color:#6b6b6b">{{ p.tag }}</p>
+          <h3 style="margin:8px 0 2px;font-family:Outfit,sans-serif;font-weight:800;font-size:30px;letter-spacing:-.01em">{{ p.title }}</h3>
+          <p style="margin:0;font-size:15px;color:#3a3a3a">{{ p.sub }}</p>
+        </div>
+        <div style="position:relative;height:clamp(260px,30vw,360px);border-radius:20px;overflow:hidden;background:{{ p.bg }}">
+          <image-slot id="{{ p.id }}" src="images/{{ p.id }}.webp" shape="rect" placeholder="{{ p.ph }}"></image-slot>
+          <a href="About Us.dc.html#{{ p.anchor }}" style="position:absolute;right:14px;bottom:14px;width:48px;height:48px;border-radius:50%;background:#fff;color:#141414;display:grid;place-items:center;font-size:20px;box-shadow:0 8px 20px rgba(0,0,0,.15);transition:transform .3s" style-hover="transform:rotate(45deg);background:#F0592A;color:#fff">↗</a>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section style="padding:clamp(20px,4vw,40px) 0;overflow:hidden;background:#0E7C86;transform:rotate(-2deg);margin:0 -2vw">
+  <div data-g="mq1" style="display:flex;gap:40px;white-space:nowrap;font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(48px,8vw,120px);letter-spacing:-.02em;color:#FBF4EC;line-height:1">
+    <span>PADDLE UP ✺ GAME ON ✺ DINK MORE ✺ PLAY MORE ✺ PADDLE UP ✺ GAME ON ✺ DINK MORE ✺ PLAY MORE ✺</span>
+  </div>
+  <div data-g="mq2" style="display:flex;gap:40px;white-space:nowrap;font-family:Yellowtail,cursive;font-size:clamp(40px,6vw,92px);color:#F4B63A;line-height:1.3;transform:translateX(-30%)">
+    <span>4 Courts · Premier Pickleball Facility · Spacious Parking · Easy Online Booking · Open Play · Tournaments and Events · 4 Courts · Premier Pickleball Facility · Spacious Parking ·</span>
+  </div>
+</section>
+
+<!-- MORPH -->
+<section id="game" data-g="morph" style="position:relative;min-height:100vh;display:flex;align-items:center;padding:clamp(72px,6vw,80px) clamp(16px,4vw,48px) clamp(24px,6vw,80px)">
+  <div style="max-width:1320px;width:100%;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(24px,4vw,64px);align-items:center">
+    <div style="position:relative;aspect-ratio:1;max-width:{{ morphMax }};width:100%;justify-self:center">
+      <div style="position:absolute;inset:6%;border-radius:50%;border:2px dashed rgba(20,20,20,.14)"></div>
+      <svg data-g="morph-svg" viewBox="0 0 400 400" style="position:relative;width:100%;height:100%;overflow:visible">
+        <path data-g="morphPath" d="M200 40 C288 40 360 112 360 200 C360 288 288 360 200 360 C112 360 40 288 40 200 C40 112 112 40 200 40Z" fill="#F4B63A"></path>
+        <g data-g="morph-holes">
+          <sc-for list="{{ bigHoles }}" as="h" hint-placeholder-count="0"><circle cx="{{ h.x }}" cy="{{ h.y }}" r="{{ h.r }}" fill="#FBF4EC"></circle></sc-for>
+        </g>
+      </svg>
+      <div style="position:absolute;left:0;bottom:4%;display:flex;gap:8px">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4"><span data-g="dot" style="width:34px;height:6px;border-radius:6px;background:#141414;opacity:.15"></span></sc-for>
+      </div>
+    </div>
+    <div style="position:relative">
+      <p style="margin:0 0 18px;font-family:Outfit,sans-serif;font-weight:600;font-size:14px;letter-spacing:.16em;color:#0E7C86">YOUR GAME, IN FOUR SHAPES</p>
+      <div style="display:grid">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <div data-g="step" style="grid-area:1/1">
+            <p style="margin:0;font-family:Outfit,sans-serif;font-weight:800;font-size:18px;color:{{ s.color }}">{{ s.n }} — {{ s.k }}</p>
+            <h2 style="margin:10px 0 0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(38px,5.8vw,92px);line-height:.95;letter-spacing:-.035em">{{ s.a }}<br><span style="font-family:Yellowtail,cursive;font-weight:400;letter-spacing:0;color:{{ s.color }}">{{ s.b }}</span></h2>
+            <p style="margin:clamp(12px,2vw,24px) 0 0;max-width:440px;font-size:clamp(15px,1.3vw,18px);line-height:1.6;color:#3a3a3a;text-wrap:pretty">{{ s.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES + IMPACT -->
+<section style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(16px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px">
+  <div data-g="reveal" style="background:#fff;border-radius:32px;padding:clamp(24px,3vw,40px)">
+    <h3 style="margin:0 0 28px;font-family:Outfit,sans-serif;font-weight:800;font-size:22px;letter-spacing:.02em">WHAT WE DO</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px 24px">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+        <div style="display:flex;gap:14px;align-items:flex-start">
+          <span style="flex:none;width:46px;height:46px;border-radius:50%;background:{{ s.c }};color:#fff;display:grid;place-items:center;font-family:Outfit,sans-serif;font-weight:800;font-size:14px">{{ s.n }}</span>
+          <div>
+            <p style="margin:2px 0 4px;font-family:Outfit,sans-serif;font-weight:700;font-size:16px">{{ s.t }}</p>
+            <p style="margin:0;font-size:14px;line-height:1.5;color:#555">{{ s.d }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div data-g="reveal" style="background:#fff;border-radius:32px;padding:clamp(24px,3vw,40px)">
+    <h3 style="margin:0 0 28px;font-family:Outfit,sans-serif;font-weight:800;font-size:22px;letter-spacing:.02em">OUR IMPACT</h3>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+        <div data-g="stat" style="background:{{ s.bg }};border-radius:20px;padding:clamp(18px,2vw,28px)">
+          <p style="margin:0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(38px,4vw,58px);line-height:1;color:{{ s.c }}"><span data-count="{{ s.v }}">0</span>{{ s.suf }}</p>
+          <p style="margin:12px 0 0;font-family:Outfit,sans-serif;font-weight:600;font-size:13px;letter-spacing:.1em;line-height:1.4;color:#141414">{{ s.l }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="words" style="padding:clamp(40px,6vw,80px) 0;overflow:hidden">
+  <div style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,4vw,48px) 30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
+    <h3 style="margin:0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(32px,4vw,56px);letter-spacing:-.02em">Kind words <span style="color:#0E7C86">♥</span></h3>
+    <p style="margin:0;font-family:Yellowtail,cursive;font-size:26px;color:#F0592A">← drag the rally →</p>
+  </div>
+  <div data-g="twrap" style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,4vw,48px)">
+    <div data-g="ttrack" style="display:flex;gap:20px;width:max-content;cursor:grab">
+      <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="5">
+        <figure style="margin:0;width:clamp(280px,30vw,380px);background:#fff;border:1px solid rgba(20,20,20,.07);border-radius:24px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;user-select:none">
+          <blockquote style="margin:0;font-size:18px;line-height:1.55;color:#222"><span style="display:block;font-family:Outfit,sans-serif;font-weight:900;font-size:44px;line-height:.6;color:#0E7C86;margin-bottom:10px">“</span>{{ t.q }}</blockquote>
+          <figcaption style="display:flex;align-items:center;gap:14px">
+            <span style="font-family:Outfit,sans-serif"><span style="display:block;font-weight:700;font-size:15px">— {{ t.n }}</span><span style="font-size:13px;color:#555">{{ t.r }}</span></span>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" style="max-width:1320px;margin:0 auto;padding:clamp(20px,4vw,40px) clamp(16px,4vw,48px) clamp(60px,8vw,100px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px;align-items:stretch">
+  <div data-g="reveal" style="position:relative;padding:clamp(24px,3vw,40px) 0">
+    <svg data-g="asterisk" viewBox="0 0 100 100" style="width:64px;margin-bottom:10px"><g stroke="#F4B63A" strokeWidth="12" strokeLinecap="round"><line x1="50" y1="8" x2="50" y2="92"></line><line x1="8" y1="50" x2="92" y2="50"></line><line x1="20" y1="20" x2="80" y2="80"></line><line x1="80" y1="20" x2="20" y2="80"></line></g></svg>
+    <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(52px,7vw,104px);line-height:.9;letter-spacing:-.04em">LET'S PLAY<br><span style="font-family:Yellowtail,cursive;font-weight:400;color:#0E7C86;letter-spacing:0;font-size:.82em">Something Amazing!</span></h2>
+    <div style="display:flex;gap:28px;margin-top:40px;flex-wrap:wrap;font-family:Outfit,sans-serif;font-weight:600;font-size:15px">
+      <a href="mailto:hello@cebupickleball.court" style="color:#141414">hello@cebupickleball.court</a>
+      <a href="#" style="color:#141414">@cebupickleballcourt</a>
+      <span>Open 6am – 11pm daily</span>
+    </div>
+  </div>
+  <div data-g="reveal" style="position:relative;background:#0E7C86;color:#fff;border-radius:32px;padding:clamp(28px,3.4vw,48px);overflow:hidden;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center">
+    <div style="position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)"></div>
+    <div style="position:relative;flex:1 1 240px">
+      <p style="margin:0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(24px,2.4vw,34px);line-height:1.1">GOT A GAME<br>IN MIND?</p>
+      <p style="margin:14px 0 26px;font-size:16px;line-height:1.55;max-width:300px;color:#fff">Courts, clinics, private parties — we'll set the net.</p>
+      <a href="Book a Court.dc.html" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#141414;padding:15px 24px;border-radius:999px;font-family:Outfit,sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em" style-hover="background:#F4B63A;color:#141414">BOOK NOW <span>→</span></a>
+    </div>
+    <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:10px">
+      <div data-g="paddle" style="width:clamp(110px,11vw,150px);cursor:grab;touch-action:none;transform-origin:50% 68%">
+        <svg viewBox="0 0 120 200" style="width:100%;display:block;overflow:visible">
+          <path d="M60 6 C98 6 114 36 114 74 C114 112 90 132 72 136 L72 186 C72 196 48 196 48 186 L48 136 C30 132 6 112 6 74 C6 36 22 6 60 6Z" fill="#141414"></path>
+          <path d="M60 12 C93 12 108 38 108 74 C108 108 88 126 60 128 C32 126 12 108 12 74 C12 38 27 12 60 12Z" fill="#F0592A"></path>
+          <path d="M34 34 C44 24 60 22 70 24" fill="none" stroke="#F9CDB8" strokeWidth="6" strokeLinecap="round"></path>
+          <circle cx="60" cy="176" r="3" fill="#F4B63A"></circle>
+        </svg>
+      </div>
+      <p style="margin:0;font-family:Yellowtail,cursive;font-size:22px;color:#F4B63A;white-space:nowrap">spin to swing</p>
+      <p style="margin:0;font-family:Outfit,sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em">SWINGS: <span data-g="swings">0</span></p>
+    </div>
+  </div>
+</section>
+
+<footer style="border-top:1px solid rgba(20,20,20,.08);padding:26px clamp(16px,4vw,48px)">
+  <div style="max-width:1320px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:Outfit,sans-serif;font-size:13px;font-weight:500;color:#555">
+    <span>© 2026 Cebu Pickleball Court</span>
+    <span>No volleys in the kitchen. Everywhere else, go for it.</span>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;blobLoop&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1280 };
+  componentDidMount() {
+    this._rs = () => { const w = window.innerWidth; if ((w < 900) !== (this.state.w < 900)) this.setState({ w }, () => window.ScrollTrigger && window.ScrollTrigger.refresh()); };
+    window.addEventListener("resize", this._rs);
+    this._t = setInterval(() => {
+      const w = window;
+      if (w.gsap && w.ScrollTrigger && w.Draggable && w.InertiaPlugin && w.MorphSVGPlugin && w.DrawSVGPlugin && w.SplitText) {
+        clearInterval(this._t);
+        (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => requestAnimationFrame(() => this.init()));
+      }
+    }, 60);
+  }
+  componentDidUpdate(prev) {
+    if (!this.ctx) return;
+    if (prev.showCursor !== this.props.showCursor || prev.blobLoop !== this.props.blobLoop) {
+      this.ctx.revert(); requestAnimationFrame(() => this.init());
+    }
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this._rs); clearInterval(this._t); this.ctx && this.ctx.revert(); }
+
+  init() {
+    const { gsap, ScrollTrigger, Draggable, InertiaPlugin, MorphSVGPlugin, DrawSVGPlugin, SplitText } = window;
+    gsap.registerPlugin(ScrollTrigger, Draggable, InertiaPlugin, MorphSVGPlugin, DrawSVGPlugin, SplitText);
+    const q = s => document.querySelector(`[data-g="${s}"]`);
+    const qa = s => gsap.utils.toArray(`[data-g="${s}"]`);
+    const blobLoop = this.props.blobLoop ?? true;
+
+    this.ctx = gsap.context(() => {
+      // HERO intro
+      const split = SplitText.create(qa('split'), { type: 'chars', mask: 'chars' });
+      const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+      tl.from(q('nav'), { y: -40, opacity: 0, duration: 1 }, 0)
+        .from(split.chars, { yPercent: 110, duration: 1.2, stagger: 0.03 }, 0.1)
+        .from(q('script'), { clipPath: 'inset(0 100% 0 0)', duration: 1.3, ease: 'power3.inOut' }, 0.55)
+        .from(q('underline'), { drawSVG: '0%', duration: 1, ease: 'power2.inOut' }, 1.1)
+        .from(qa('hero-fade'), { y: 30, opacity: 0, duration: 1, stagger: 0.08 }, 0.5)
+        .from(q('hero-visual'), { scale: 0.8, opacity: 0, duration: 1.6, rotation: -4 }, 0.15)
+        .from(q('heroBlob'), { morphSVG: 'M250,250Q250,250,250,250Q250,250,250,250Q250,250,250,250Q250,250,250,250Q250,250,250,250Q250,250,250,250Q250,250,250,250Q250,250,250,250Z', duration: 1.6, ease: 'elastic.out(1,0.6)' }, 0.4)
+        .from(q('ball'), { y: -520, duration: 1.6, ease: 'bounce.out' }, 0.6)
+        .from(q('badge'), { scale: 0, duration: 1, ease: 'back.out(2)' }, 1)
+        .from(q('ball-hint'), { opacity: 0, y: 10, duration: 0.8 }, 1.8)
+        .from(q('squiggle').querySelector('path'), { drawSVG: '0%', duration: 1.4, ease: 'power2.inOut' }, 0.8);
+
+      if (blobLoop) {
+        gsap.timeline({ repeat: -1, yoyo: true, delay: 2, defaults: { duration: 3.2, ease: 'sine.inOut' } })
+          .to(q('heroBlob'), { morphSVG: 'M436,318Q418,386,354,417Q290,448,228,429Q166,410,112,377Q58,344,56,279Q54,214,87,160Q120,106,182,77Q244,48,306,70Q368,92,411,145Q454,198,450,250Q446,302,436,318Z' })
+          .to(q('heroBlob'), { morphSVG: 'M408,296Q378,342,343,389Q308,436,245,426Q182,416,132,381Q82,346,70,283Q58,220,90,168Q122,116,178,82Q234,48,295,68Q356,88,397,137Q438,186,438,218Q438,250,408,296Z' });
+      }
+      gsap.to(q('sunburst'), { rotation: 360, duration: 40, repeat: -1, ease: 'none', transformOrigin: '50% 50%' });
+      gsap.to(q('badge-ring'), { rotation: 360, duration: 14, repeat: -1, ease: 'none', transformOrigin: '50% 50%' });
+      gsap.to(q('spark'), { rotation: 180, scale: 1.25, duration: 1.8, repeat: -1, yoyo: true, ease: 'sine.inOut', transformOrigin: '50% 50%' });
+      qa('asterisk').forEach(a => gsap.to(a, { rotation: 360, ease: 'none', transformOrigin: '50% 50%', scrollTrigger: { trigger: a, start: 'top bottom', end: 'bottom top', scrub: 1 } }));
+
+      gsap.to(q('hero-visual'), { yPercent: -8, ease: 'none', scrollTrigger: { trigger: q('hero'), start: 'top top', end: 'bottom top', scrub: true } });
+
+      // Draggable pickleball
+      const ball = q('ball'), inner = q('ball-inner'), hint = q('ball-hint');
+      Draggable.create(ball, {
+        type: 'x,y', bounds: q('hero'), inertia: true, edgeResistance: 0.6, zIndexBoost: false,
+        onPress() { gsap.to(ball, { scale: 1.15, duration: 0.25 }); gsap.to(hint, { opacity: 0, duration: 0.3 }); },
+        onRelease() { gsap.to(ball, { scale: 1, duration: 0.6, ease: 'elastic.out(1,0.4)' }); },
+        onDrag() { gsap.set(inner, { rotation: this.x * 1.4 }); },
+        onThrowUpdate() { gsap.set(inner, { rotation: this.x * 1.4 }); },
+      });
+
+      // Reveals
+      qa('reveal').forEach(el => gsap.from(el, { y: 80, opacity: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 88%' } }));
+
+      // Horizontal programs
+      const hs = q('hscroll'), track = q('htrack');
+      const dist = () => Math.max(0, track.scrollWidth - hs.clientWidth);
+      const htl = gsap.timeline({ scrollTrigger: { trigger: hs, start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 1, invalidateOnRefresh: true } });
+      htl.to(track, { x: () => -dist(), ease: 'none' }, 0).to(q('hbar'), { scaleX: 1, ease: 'none' }, 0);
+      qa('hcard').forEach((c, i) => gsap.from(c, { y: 120, rotation: i % 2 ? 4 : -4, opacity: 0, duration: 1.1, ease: 'expo.out', delay: Math.min(i, 3) * 0.08, scrollTrigger: { trigger: hs, start: 'top 75%' } }));
+
+      // Marquee
+      gsap.to(q('mq1'), { xPercent: -30, ease: 'none', scrollTrigger: { trigger: q('mq1'), start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
+      gsap.fromTo(q('mq2'), { xPercent: -30 }, { xPercent: 0, ease: 'none', scrollTrigger: { trigger: q('mq2'), start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
+
+      // Morph journey
+      const shapes = [
+        'M200 40 C288 40 360 112 360 200 C360 288 288 360 200 360 C112 360 40 288 40 200 C40 112 112 40 200 40Z',
+        'M200 30 C290 30 340 90 340 170 C340 250 280 290 230 300 L228 370 C228 380 172 380 172 370 L170 300 C120 290 60 250 60 170 C60 90 110 30 200 30Z',
+        'M200 30 L226.8 135.3 L320.2 79.8 L264.7 173.2 L370 200 L264.7 226.8 L320.2 320.2 L226.8 264.7 L200 370 L173.2 264.7 L79.8 320.2 L135.3 226.8 L30 200 L135.3 173.2 L79.8 79.8 L173.2 135.3Z',
+        'M200 350 C80 260 40 200 40 140 C40 90 80 55 125 55 C160 55 185 75 200 100 C215 75 240 55 275 55 C320 55 360 90 360 140 C360 200 320 260 200 350Z',
+      ];
+      const colors = ['#F4B63A', '#F0592A', '#0E7C86', '#F28B6B'];
+      const steps = qa('step'), dots = qa('dot'), path = q('morphPath');
+      gsap.set(steps.slice(1), { autoAlpha: 0, y: 50 });
+      gsap.set(dots[0], { opacity: 1, backgroundColor: colors[0] });
+      const mtl = gsap.timeline({ scrollTrigger: { trigger: q('morph'), start: 'top top', end: '+=300%', pin: true, scrub: 1 } });
+      mtl.to(q('morph-svg'), { rotation: 8, duration: 3, ease: 'none', transformOrigin: '50% 50%' }, 0);
+      for (let i = 1; i < 4; i++) {
+        const t = i - 1 + 0.15;
+        mtl.to(path, { morphSVG: shapes[i], fill: colors[i], duration: 0.7, ease: 'power3.inOut' }, t)
+          .to(steps[i - 1], { autoAlpha: 0, y: -50, duration: 0.35 }, t)
+          .to(steps[i], { autoAlpha: 1, y: 0, duration: 0.4 }, t + 0.35)
+          .to(dots[i - 1], { opacity: 0.15, backgroundColor: '#141414', duration: 0.3 }, t)
+          .to(dots[i], { opacity: 1, backgroundColor: colors[i], duration: 0.3 }, t + 0.3);
+        if (i === 1) mtl.to(q('morph-holes'), { scale: 0, opacity: 0, transformOrigin: '50% 50%', duration: 0.4 }, t);
+      }
+      mtl.to({}, { duration: 0.3 });
+
+      // Counters
+      document.querySelectorAll('[data-count]').forEach(el => {
+        const end = +el.dataset.count, o = { v: 0 };
+        gsap.to(o, { v: end, duration: 2.2, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' }, onUpdate: () => { el.textContent = Math.round(o.v).toLocaleString(); } });
+      });
+      gsap.from(qa('stat'), { scale: 0.85, opacity: 0, duration: 0.9, stagger: 0.1, ease: 'back.out(1.8)', scrollTrigger: { trigger: qa('stat')[0], start: 'top 88%' } });
+
+      // Testimonials drag
+      Draggable.create(q('ttrack'), { type: 'x', bounds: q('twrap'), inertia: true, edgeResistance: 0.85, cursor: 'grab', activeCursor: 'grabbing' });
+
+      // Paddle spin
+      const sw = q('swings');
+      let best = 0;
+      Draggable.create(q('paddle'), {
+        type: 'rotation', inertia: true,
+        onDrag() { upd(this.rotation); }, onThrowUpdate() { upd(this.rotation); },
+      });
+      function upd(r) { const n = Math.floor(Math.abs(r) / 360); if (n !== best) { best = n; sw.textContent = n; gsap.fromTo(sw, { scale: 1.6 }, { scale: 1, duration: 0.4 }); } }
+      gsap.to(q('paddle'), { rotation: 14, duration: 1.6, yoyo: true, repeat: 1, ease: 'sine.inOut', scrollTrigger: { trigger: q('paddle'), start: 'top 85%' } });
+
+      // Cursor
+      const cur = q('cursor');
+      if (cur && matchMedia('(pointer:fine)').matches) {
+        const xTo = gsap.quickTo(cur, 'x', { duration: 0.35, ease: 'power3' }), yTo = gsap.quickTo(cur, 'y', { duration: 0.35, ease: 'power3' });
+        const mv = e => { xTo(e.clientX); yTo(e.clientY); };
+        const ov = e => { const hit = e.target.closest('a,[data-g="ball"],[data-g="paddle"],[data-g="ttrack"]'); gsap.to(cur, { scale: hit ? 3 : 1, duration: 0.3 }); };
+        window.addEventListener('pointermove', mv); window.addEventListener('pointerover', ov);
+        return () => { window.removeEventListener('pointermove', mv); window.removeEventListener('pointerover', ov); };
+      } else if (cur) cur.style.display = 'none';
+    });
+    ScrollTrigger.refresh();
+  }
+
+  renderVals() {
+    const rays = Array.from({ length: 14 }, (_, i) => {
+      const a = (i / 14) * Math.PI * 2;
+      return { x1: +(Math.cos(a) * 42).toFixed(1), y1: +(Math.sin(a) * 42).toFixed(1), x2: +(Math.cos(a) * 96).toFixed(1), y2: +(Math.sin(a) * 96).toFixed(1) };
+    });
+    const ring = (cx, cy, rad, n, r, off = 0) => Array.from({ length: n }, (_, i) => { const a = off + (i / n) * Math.PI * 2; return { x: +(cx + Math.cos(a) * rad).toFixed(1), y: +(cy + Math.sin(a) * rad).toFixed(1), r }; });
+    const holes = [{ x: 50, y: 50, r: 4.5 }, ...ring(50, 50, 20, 6, 4), ...ring(50, 50, 36, 10, 3.6, 0.3)];
+    const bigHoles = [{ x: 200, y: 200, r: 16 }, ...ring(200, 200, 72, 6, 14), ...ring(200, 200, 128, 10, 12, 0.3)];
+    return {
+      showCursor: this.props.showCursor ?? true,
+      showNavLinks: this.state.w >= 900,
+      morphMax: this.state.w >= 900 ? 'min(640px,52vh)' : 'min(420px,34vh)',
+      rays, holes, bigHoles,
+      coachList: [
+        { n: '01', t: 'Court Rentals' }, { n: '02', t: 'Open Play' }, { n: '03', t: 'Paddle Rentals' },
+        { n: '04', t: 'Leagues & Tournaments' }, { n: '05', t: 'Private Events' },
+      ],
+      programs: [
+        { id: 'offer-1', anchor: 'offer-1', tag: 'ARRIVAL', title: 'SPACIOUS PARKING', sub: 'Plenty of room, steps from the courts', bg: '#F9CDB8', ph: 'Drop a spacious parking photo' },
+        { id: 'offer-2', anchor: 'offer-2', tag: 'COURTS', title: 'QUALITY PICKLEBALL COURTS', sub: 'Four courts, cushioned and lined', bg: '#CFE6E3', ph: 'Drop a quality pickleball courts photo' },
+        { id: 'offer-3', anchor: 'offer-3', tag: 'FACILITY', title: 'PREMIER PICKLEBALL FACILITY', sub: 'Built for players, by players', bg: '#FCE8C3', ph: 'Drop a premier pickleball facility photo' },
+        { id: 'offer-4', anchor: 'offer-4', tag: 'BOOKING', title: 'EASY ONLINE BOOKING', sub: 'Reserve a court in seconds', bg: '#FDE3D8', ph: 'Drop a easy online booking photo' },
+        { id: 'offer-5', anchor: 'offer-5', tag: 'PLAY', title: 'OPEN PLAY SESSIONS', sub: 'Show up, paddle up, meet players', bg: '#EEEAEA', ph: 'Drop a open play sessions photo' },
+        { id: 'offer-6', anchor: 'offer-6', tag: 'GEAR', title: 'PADDLE RENTALS', sub: 'No paddle? No problem', bg: '#F9CDB8', ph: 'Drop a paddle rentals photo' },
+        { id: 'offer-7', anchor: 'offer-7', tag: 'LOUNGE', title: 'COMFORTABLE WAITING AREA', sub: 'Shade, seats and a view of the game', bg: '#CFE6E3', ph: 'Drop a comfortable waiting area photo' },
+        { id: 'offer-8', anchor: 'offer-8', tag: 'COMPETE', title: 'LEAGUES AND TOURNAMENTS', sub: 'Brackets, ladders and bragging rights', bg: '#FCE8C3', ph: 'Drop a leagues and tournaments photo' },
+      ],
+      steps: [
+        { n: '01', k: 'BOOKING', a: 'Easy Online', b: 'Booking', d: 'Forty minutes, a loaner paddle and a coach. You will rally before you leave.', color: '#D99A1C' },
+        { n: '02', k: 'PLAY', a: 'Pick up', b: 'a paddle.', d: 'Open play every hour. Paddle up on the board and we match you by level.', color: '#F0592A' },
+        { n: '03', k: 'COMPETE', a: 'Chase', b: 'the spark.', d: 'Ladders, leagues and monthly tournaments with real brackets and real bragging rights.', color: '#0E7C86' },
+        { n: '04', k: 'BELONG', a: 'Stay for', b: 'the people.', d: 'Post-game tacos, member socials and a group chat that never sleeps.', color: '#E0694A' },
+      ],
+      services: [
+        { n: '01', t: 'Court Rentals', d: '12 cushioned courts, book by the hour', c: '#F0592A' },
+        { n: '02', t: 'Paddle Rentals', d: 'Grab a paddle and balls on arrival', c: '#0E7C86' },
+        { n: '03', t: 'Leagues', d: 'Rated ladders every season', c: '#0E7C86' },
+        { n: '04', t: 'Tournaments', d: 'Monthly brackets, all levels', c: '#D99A1C' },
+        { n: '05', t: 'Pro Shop', d: 'Paddles, balls, shoes & demos', c: '#F0592A' },
+        { n: '06', t: 'Events & Parties', d: 'Birthdays, team days, socials', c: '#0E7C86' },
+      ],
+      stats: [
+        { v: 12, suf: '', l: 'CUSHIONED\nCOURTS', bg: '#EEEAEA', c: '#0E7C86' },
+        { v: 2400, suf: '+', l: 'ACTIVE MEMBERS', bg: '#FDE3D8', c: '#F0592A' },
+        { v: 38, suf: '', l: 'WEEKLY CLINICS', bg: '#FDE3D8', c: '#F0592A' },
+        { v: 9, suf: 'yrs', l: 'OF RALLYING', bg: '#FCE8C3', c: '#C98E14' },
+      ],
+      testimonials: [
+        { id: 'av-1', q: 'Came for one clinic, left with a paddle, a league slot and six new friends.', n: 'EMILY R.', r: '3.5 rated, Tuesday regular' },
+        { id: 'av-2', q: 'Jordan fixed my third-shot drop in a single session. Wizardry.', n: 'DAVID M.', r: 'Night League captain' },
+        { id: 'av-3', q: 'The cleanest courts in the city and the loudest cheers.', n: 'SOPHIA L.', r: 'Tournament winner, May' },
+        { id: 'av-4', q: 'My kids beg to go. Honestly, so do I.', n: 'MARCUS T.', r: 'Junior Rally parent' },
+        { id: 'av-5', q: 'Best hour of my week, every week. The kitchen is home now.', n: 'PRIYA K.', r: 'Member since 2021' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

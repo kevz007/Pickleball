@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&family=Yellowtail&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/InertiaPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+html,body{margin:0;background:#FBF4EC;color:#141414;-webkit-font-smoothing:antialiased}
+body{overflow-x:clip}
+*{box-sizing:border-box}
+a{color:#0E7C86;text-decoration:none}
+a:hover{color:#F0592A}
+::selection{background:#F4B63A;color:#141414}
+</style>
+</helmet>
+
+<div style="font-family:'DM Sans',sans-serif;background:#FBF4EC;position:relative;overflow-x:clip">
+
+<sc-if value="{{ showCursor }}" hint-placeholder-val="{{ false }}">
+  <div data-g="cursor" style="position:fixed;left:0;top:0;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#F0592A;pointer-events:none;z-index:9999;mix-blend-mode:multiply"></div>
+</sc-if>
+
+<header style="position:sticky;top:0;z-index:50;padding:14px clamp(16px,4vw,48px)">
+  <nav data-g="nav" style="max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:clamp(10px,2vw,24px);padding:8px 8px 8px clamp(12px,2vw,20px);border-radius:999px;background:rgba(251,244,236,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(20,20,20,.06)">
+    <a href="Cebu Pickleball Court.dc.html" style="display:flex;align-items:center;gap:10px;color:#141414">
+      <span style="position:relative;width:34px;height:34px;border-radius:50%;background:#F4B63A;display:grid;place-items:center">
+        <span style="position:absolute;width:18px;height:34px;left:0;top:0;border-radius:34px 0 0 34px;background:#0E7C86"></span>
+        <span style="position:relative;width:8px;height:8px;border-radius:50%;background:#FBF4EC"></span>
+      </span>
+      <span style="display:flex;flex-direction:column;line-height:.95;font-family:Outfit,sans-serif">
+        <span style="font-weight:800;font-size:18px;letter-spacing:.02em">CEBU</span>
+        <span style="font-weight:500;font-size:11px;letter-spacing:.24em">PICKLEBALL COURT</span>
+      </span>
+    </a>
+    <sc-if value="{{ showNavLinks }}" hint-placeholder-val="{{ true }}"><div style="display:flex;gap:clamp(14px,2.4vw,34px);font-family:Outfit,sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;flex-wrap:wrap;justify-content:center;flex:1 1 0;min-width:0;height:18px;overflow:hidden">
+      <a href="About Us.dc.html" style="color:#F0592A">ABOUT US</a>
+      <a href="Courts and Pricing.dc.html" style="color:#141414">COURTS &amp; PRICING</a>
+      <a href="Contact Us.dc.html" style="color:#141414">CONTACT US</a>
+    </div></sc-if>
+    <a href="Book a Court.dc.html" style="display:flex;align-items:center;gap:10px;background:#F0592A;color:#fff;border-radius:999px;font-family:Outfit,sans-serif;font-weight:700;letter-spacing:.06em;white-space:nowrap;flex:none;padding:clamp(10px,1.2vw,13px) clamp(14px,1.8vw,22px);font-size:clamp(11px,1vw,13px);transition:transform .3s" style-hover="transform:translateY(-2px);background:#141414;color:#fff">BOOK A COURT <span>→</span></a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section data-g="hero" style="position:relative;max-width:1320px;margin:0 auto;padding:clamp(40px,7vw,100px) clamp(16px,4vw,48px) clamp(60px,8vw,110px)">
+  <div style="display:flex;flex-direction:column;width:fit-content;max-width:100%;gap:clamp(20px,3vw,36px)">
+    <h1 style="margin:0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(72px,14vw,220px);line-height:.85;letter-spacing:-.05em;display:flex;align-items:baseline;gap:.12em;flex-wrap:wrap">
+      <span data-g="split">About</span>
+      <span data-g="script" style="position:relative;display:inline-block;font-family:Yellowtail,cursive;font-weight:400;color:#0E7C86;letter-spacing:0;padding:0 .12em .12em 0;line-height:1">Us
+        <svg viewBox="0 0 300 30" preserveAspectRatio="none" style="position:absolute;left:-4%;bottom:-.02em;width:110%;height:.14em;overflow:visible"><path data-g="underline" d="M4 22 C80 6 180 4 296 14" fill="none" stroke="#F4B63A" strokeWidth="7" strokeLinecap="round"></path></svg>
+      </span>
+    </h1>
+    <p data-g="hero-fade" style="margin:0;width:0;min-width:100%;font-size:clamp(17px,1.6vw,24px);line-height:1.6;color:#3a3a3a;text-wrap:pretty">Built for pickleball players in Cebu — quality courts, easy booking and a place where anyone can walk in and find a game.</p>
+  </div>
+  <div data-g="ball" style="position:absolute;right:clamp(24px,6vw,90px);bottom:clamp(30px,6vw,80px);width:clamp(64px,7vw,96px);aspect-ratio:1;z-index:5;cursor:grab;touch-action:none">
+    <svg data-g="ball-inner" viewBox="0 0 100 100" style="width:100%;height:100%;display:block;filter:drop-shadow(0 16px 14px rgba(0,0,0,.28))">
+      <circle cx="50" cy="50" r="48" fill="#C6DC3A"></circle>
+      <circle cx="42" cy="38" r="40" fill="#D6E85A"></circle>
+      <sc-for list="{{ holes }}" as="h" hint-placeholder-count="0"><circle cx="{{ h.x }}" cy="{{ h.y }}" r="{{ h.r }}" fill="#8FA61E"></circle></sc-for>
+    </svg>
+  </div>
+</section>
+
+<!-- STORY -->
+<section style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,4vw,48px) clamp(60px,8vw,110px)">
+  <div data-g="reveal" style="background:#fff;border-radius:32px;padding:clamp(28px,4vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,64px);box-shadow:0 30px 70px -40px rgba(0,0,0,.18)">
+    <div>
+      <p style="margin:0 0 14px;font-family:Outfit,sans-serif;font-weight:600;font-size:14px;letter-spacing:.16em;color:#0E7C86">OUR STORY</p>
+      <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(34px,4vw,60px);line-height:1;letter-spacing:-.03em;text-wrap:balance">A court you can count on. <span style="font-family:Yellowtail,cursive;font-weight:400;color:#F0592A;letter-spacing:0">A crowd you'll love.</span></h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;font-size:17px;line-height:1.7;color:#3a3a3a">
+      <p data-g="story-p" style="margin:0;text-wrap:pretty">Pickleball took off in Cebu fast — faster than the places to play it. Players were squeezing games onto borrowed basketball courts and chasing last-minute slots.</p>
+      <p data-g="story-p" style="margin:0;text-wrap:pretty">So we built a facility just for the game: four quality courts, simple online booking, and room to park, rest and hang out between rallies.</p>
+      <p data-g="story-p" style="margin:0;text-wrap:pretty">Whether it's your first dink or your hundredth tournament, you'll find a court ready and a community happy to play.</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px;margin-top:18px">
+    <sc-for list="{{ values }}" as="v" hint-placeholder-count="3">
+      <div data-g="value" style="background:{{ v.bg }};border-radius:24px;padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;gap:10px">
+        <span style="font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(40px,4vw,56px);line-height:1;color:{{ v.c }}">{{ v.n }}</span>
+        <p style="margin:0;font-family:Outfit,sans-serif;font-weight:800;font-size:22px">{{ v.t }}</p>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#3a3a3a">{{ v.d }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section style="padding:clamp(18px,3vw,32px) 0;overflow:hidden;background:#0E7C86;transform:rotate(-2deg);margin:0 -2vw">
+  <div data-g="mq1" style="display:flex;white-space:nowrap;font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(44px,7vw,104px);letter-spacing:-.02em;color:#FBF4EC;line-height:1">
+    <span>WHAT WE OFFER ✺ WHAT WE OFFER ✺ WHAT WE OFFER ✺ WHAT WE OFFER ✺</span>
+  </div>
+</section>
+
+<!-- OFFER DETAILS -->
+<section id="offer" style="max-width:1320px;margin:0 auto;padding:clamp(70px,9vw,130px) clamp(16px,4vw,48px) clamp(40px,6vw,80px)">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,80px)">
+    <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(44px,6vw,92px);line-height:.95;letter-spacing:-.035em">Everything<br>you need <span style="font-family:Yellowtail,cursive;font-weight:400;color:#F0592A;letter-spacing:0">to play.</span></h2>
+    <p style="margin:0;max-width:360px;font-size:17px;line-height:1.6;color:#3a3a3a;text-wrap:pretty">Eight reasons players keep coming back — from the moment you park to the final point.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(24px,5vw,72px);align-items:start">
+    <div data-g="stage" style="position:sticky;top:{{ stageTop }};z-index:3;height:{{ stageH }};max-height:820px;min-height:220px;border-radius:32px;overflow:hidden;background:#CFE6E3;box-shadow:0 40px 80px -40px rgba(0,0,0,.3)">
+      <sc-for list="{{ offers }}" as="o" hint-placeholder-count="1">
+        <div data-g="stage-img" style="position:absolute;inset:0;background:{{ o.bg }}"><image-slot id="{{ o.id }}" src="images/{{ o.id }}.webp" shape="rect" placeholder="{{ o.ph }}"></image-slot></div>
+      </sc-for>
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:clamp(16px,2vw,24px);display:flex;align-items:flex-end;justify-content:space-between;gap:12px;pointer-events:none;background:linear-gradient(to top,rgba(20,20,20,.55),rgba(20,20,20,0))">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:clamp(64px,6vw,84px);aspect-ratio:1;border-radius:50%;background:#F0592A;color:#fff;display:grid;place-items:center;overflow:hidden">
+            <div style="height:clamp(28px,2.8vw,38px);overflow:hidden;font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(26px,2.6vw,36px);line-height:clamp(28px,2.8vw,38px)">
+              <div data-g="num-col"><sc-for list="{{ offers }}" as="o" hint-placeholder-count="1"><div>{{ o.n }}</div></sc-for></div>
+            </div>
+          </div>
+          <div style="height:18px;overflow:hidden;font-family:Outfit,sans-serif;font-weight:700;font-size:13px;letter-spacing:.16em;line-height:18px;color:#fff">
+            <div data-g="tag-col"><sc-for list="{{ offers }}" as="o" hint-placeholder-count="1"><div>{{ o.tag }} · {{ o.n }}/08</div></sc-for></div>
+          </div>
+        </div>
+        <a href="Book a Court.dc.html" style="pointer-events:auto;display:flex;align-items:center;gap:10px;background:#FBF4EC;color:#141414;padding:13px 20px;border-radius:999px;font-family:Outfit,sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;white-space:nowrap" style-hover="background:#F4B63A;color:#141414">BOOK A COURT <span>→</span></a>
+      </div>
+    </div>
+
+    <div data-g="list" style="position:relative;padding-right:{{ listPad }}">
+      <div style="position:absolute;right:30px;top:0;bottom:0;width:3px;border-radius:3px;background:rgba(20,20,20,.1)">
+        <div data-g="line-fill" style="position:absolute;inset:0;border-radius:3px;background:#0E7C86;transform-origin:top;transform:scaleY(0)"></div>
+      </div>
+      <div data-g="line-ball" style="position:absolute;right:15.5px;top:0;width:32px;height:32px;z-index:2">
+        <svg data-g="line-ball-inner" viewBox="0 0 100 100" style="width:100%;height:100%;display:block;filter:drop-shadow(0 6px 6px rgba(0,0,0,.25))">
+          <circle cx="50" cy="50" r="48" fill="#C6DC3A"></circle>
+          <circle cx="42" cy="38" r="40" fill="#D6E85A"></circle>
+          <sc-for list="{{ holes }}" as="h" hint-placeholder-count="0"><circle cx="{{ h.x }}" cy="{{ h.y }}" r="{{ h.r }}" fill="#8FA61E"></circle></sc-for>
+        </svg>
+      </div>
+      <sc-for list="{{ offers }}" as="o" hint-placeholder-count="3">
+        <article id="{{ o.anchor }}" data-g="item" style="position:relative;min-height:72vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,80px) 0;border-top:1px solid rgba(20,20,20,.1)">
+          <div data-g="item-body">
+            <div style="display:flex;justify-content:space-between;gap:16px;font-family:Outfit,sans-serif;font-weight:600;font-size:13px;letter-spacing:.16em;color:{{ o.c }}"><span>{{ o.n }} — {{ o.tag }}</span></div>
+            <h3 data-g="item-title" style="position:relative;margin:14px 0 0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(34px,4vw,58px);line-height:1;letter-spacing:-.03em;text-wrap:balance"><span data-g="item-dot" style="position:absolute;right:-48px;top:.5em;margin-top:-6px;width:12px;height:12px;border-radius:50%;background:#FBF4EC;border:3px solid rgba(20,20,20,.2)"></span>{{ o.title }}</h3>
+            <p style="margin:20px 0 0;max-width:500px;font-size:clamp(16px,1.3vw,18px);line-height:1.65;color:#3a3a3a;text-wrap:pretty">{{ o.d }}</p>
+            <div style="display:flex;flex-direction:column;gap:12px;margin-top:26px">
+              <sc-for list="{{ o.points }}" as="pt" hint-placeholder-count="3">
+                <div style="display:flex;align-items:center;gap:12px;font-family:Outfit,sans-serif;font-weight:600;font-size:16px">
+                  <span style="flex:none;width:24px;height:24px;border-radius:50%;background:#C6DC3A;display:grid;place-items:center"><svg viewBox="0 0 12 12" style="width:11px"><path d="M2 6.5 L5 9 L10 3" fill="none" stroke="#141414" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path></svg></span>{{ pt }}
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(16px,4vw,48px) clamp(60px,8vw,100px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px;align-items:stretch">
+  <div data-g="reveal" style="position:relative;padding:clamp(24px,3vw,40px) 0">
+    <svg data-g="asterisk" viewBox="0 0 100 100" style="width:64px;margin-bottom:10px"><g stroke="#F4B63A" strokeWidth="12" strokeLinecap="round"><line x1="50" y1="8" x2="50" y2="92"></line><line x1="8" y1="50" x2="92" y2="50"></line><line x1="20" y1="20" x2="80" y2="80"></line><line x1="80" y1="20" x2="20" y2="80"></line></g></svg>
+    <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(52px,7vw,104px);line-height:.9;letter-spacing:-.04em">LET'S PLAY<br><span style="font-family:Yellowtail,cursive;font-weight:400;color:#0E7C86;letter-spacing:0;font-size:.82em">Something Amazing!</span></h2>
+    <div style="display:flex;gap:28px;margin-top:40px;flex-wrap:wrap;font-family:Outfit,sans-serif;font-weight:600;font-size:15px">
+      <a href="mailto:hello@cebupickleball.court" style="color:#141414">hello@cebupickleball.court</a>
+      <a href="#" style="color:#141414">@cebupickleballcourt</a>
+    </div>
+  </div>
+  <div data-g="reveal" style="position:relative;background:#0E7C86;color:#fff;border-radius:32px;padding:clamp(28px,3.4vw,48px);overflow:hidden;display:flex;flex-direction:column;justify-content:center">
+    <div style="position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)"></div>
+    <p style="position:relative;margin:0;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(24px,2.4vw,34px);line-height:1.1">READY TO<br>HIT THE COURT?</p>
+    <p style="position:relative;margin:14px 0 26px;font-size:16px;line-height:1.55;max-width:320px;color:#fff">Pick a time, book online and we'll have your court ready.</p>
+    <a href="Book a Court.dc.html" style="position:relative;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;background:#fff;color:#141414;padding:15px 24px;border-radius:999px;font-family:Outfit,sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em" style-hover="background:#F4B63A;color:#141414">BOOK A COURT <span>→</span></a>
+  </div>
+</section>
+
+<footer style="border-top:1px solid rgba(20,20,20,.08);padding:26px clamp(16px,4vw,48px)">
+  <div style="max-width:1320px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:Outfit,sans-serif;font-size:13px;font-weight:500;color:#555">
+    <span>© 2026 Cebu Pickleball Court</span>
+    <span>No volleys in the kitchen. Everywhere else, go for it.</span>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280 };
+  componentDidMount() {
+    this._rs = () => { const w = window.innerWidth; if ((w < 900) !== (this.state.w < 900)) this.setState({ w }, () => window.ScrollTrigger && window.ScrollTrigger.refresh()); };
+    window.addEventListener('resize', this._rs);
+    this._t = setInterval(() => {
+      const w = window;
+      if (w.gsap && w.ScrollTrigger && w.Draggable && w.InertiaPlugin && w.MorphSVGPlugin && w.DrawSVGPlugin && w.SplitText) {
+        clearInterval(this._t);
+        (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => requestAnimationFrame(() => this.init()));
+      }
+    }, 60);
+  }
+  componentDidUpdate(prev) {
+    if (this.ctx && prev.showCursor !== this.props.showCursor) { this.ctx.revert(); requestAnimationFrame(() => this.init()); }
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this._rs); clearInterval(this._t); this.ctx && this.ctx.revert(); }
+
+  init() {
+    const { gsap, ScrollTrigger, Draggable, InertiaPlugin, MorphSVGPlugin, DrawSVGPlugin, SplitText } = window;
+    gsap.registerPlugin(ScrollTrigger, Draggable, InertiaPlugin, MorphSVGPlugin, DrawSVGPlugin, SplitText);
+    const q = s => document.querySelector(`[data-g="${s}"]`);
+    const qa = s => gsap.utils.toArray(`[data-g="${s}"]`);
+    const blobs = [
+      'M436,318Q418,386,354,417Q290,448,228,429Q166,410,112,377Q58,344,56,279Q54,214,87,160Q120,106,182,77Q244,48,306,70Q368,92,411,145Q454,198,450,250Q446,302,436,318Z',
+      'M408,296Q378,342,343,389Q308,436,245,426Q182,416,132,381Q82,346,70,283Q58,220,90,168Q122,116,178,82Q234,48,295,68Q356,88,397,137Q438,186,438,218Q438,250,408,296Z',
+    ];
+
+    this.ctx = gsap.context(() => {
+      const split = SplitText.create(qa('split'), { type: 'chars', mask: 'chars' });
+      gsap.timeline({ defaults: { ease: 'expo.out' } })
+        .from(q('nav'), { y: -40, opacity: 0, duration: 1 }, 0)
+        .from(split.chars, { yPercent: 110, duration: 1.2, stagger: 0.025 }, 0.1)
+        .from(q('script'), { clipPath: 'inset(0 100% 0 0)', duration: 1.3, ease: 'power3.inOut' }, 0.6)
+        .from(q('underline'), { drawSVG: '0%', duration: 1, ease: 'power2.inOut' }, 1.2)
+        .from(qa('hero-fade'), { y: 30, opacity: 0, duration: 1, stagger: 0.08 }, 0.5)
+        .from(q('ball'), { y: -600, duration: 1.6, ease: 'bounce.out' }, 1);
+
+
+      const ball = q('ball'), inner = q('ball-inner'), hint = q('ball-hint');
+      Draggable.create(ball, {
+        type: 'x,y', bounds: q('hero'), inertia: true, edgeResistance: 0.6,
+        onPress() { gsap.to(ball, { scale: 1.15, duration: 0.25 }); },
+        onRelease() { gsap.to(ball, { scale: 1, duration: 0.6, ease: 'elastic.out(1,0.4)' }); },
+        onDrag() { gsap.set(inner, { rotation: this.x * 1.4 }); },
+        onThrowUpdate() { gsap.set(inner, { rotation: this.x * 1.4 }); },
+      });
+
+      qa('reveal').forEach(el => gsap.from(el, { y: 80, opacity: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 88%' } }));
+      gsap.from(qa('story-p'), { y: 30, opacity: 0, duration: 1, stagger: 0.12, ease: 'expo.out', scrollTrigger: { trigger: qa('story-p')[0], start: 'top 85%' } });
+      gsap.from(qa('value'), { y: 60, rotation: (i) => (i - 1) * 3, opacity: 0, duration: 1.1, stagger: 0.1, ease: 'back.out(1.4)', scrollTrigger: { trigger: qa('value')[0], start: 'top 88%' } });
+      gsap.to(q('mq1'), { xPercent: -30, ease: 'none', scrollTrigger: { trigger: q('mq1'), start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
+      qa('asterisk').forEach(a => gsap.to(a, { rotation: 360, ease: 'none', transformOrigin: '50% 50%', scrollTrigger: { trigger: a, start: 'top bottom', end: 'bottom top', scrub: 1 } }));
+
+      const imgs = qa('stage-img'), items = qa('item'), dots = qa('item-dot'), bodies = qa('item-body');
+      const numCol = q('num-col'), tagCol = q('tag-col');
+      let active = -1;
+      gsap.set(imgs, { autoAlpha: 0 }); gsap.set(bodies, { opacity: 0.3 });
+      const setActive = (i) => {
+        if (i === active || i < 0) return;
+        const prev = active; active = i;
+        const down = i > prev;
+        gsap.killTweensOf(imgs);
+        imgs.forEach((im, j) => j !== i && j !== prev && gsap.set(im, { autoAlpha: 0, zIndex: 0 }));
+        if (prev >= 0) gsap.set(imgs[prev], { clipPath: 'inset(0% 0 0 0)', autoAlpha: 1 });
+        gsap.set(imgs[i], { zIndex: 2, autoAlpha: 1 });
+        gsap.fromTo(imgs[i], { clipPath: down ? 'inset(100% 0 0 0)' : 'inset(0 0 100% 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1, ease: 'expo.inOut', overwrite: true,
+          onComplete: () => { if (active !== i) return; imgs.forEach((im, j) => j !== i && gsap.set(im, { autoAlpha: 0 })); } });
+        gsap.fromTo(imgs[i].firstElementChild, { scale: 1.25 }, { scale: 1, duration: 1.4, ease: 'expo.out', overwrite: true });
+        if (prev >= 0) { gsap.set(imgs[prev], { zIndex: 1 }); gsap.to(imgs[prev].firstElementChild, { scale: 1.08, duration: 1, ease: 'expo.inOut' }); }
+        const lh = numCol.firstElementChild ? numCol.firstElementChild.offsetHeight : 0;
+        const th = tagCol.firstElementChild ? tagCol.firstElementChild.offsetHeight : 18;
+        gsap.to(numCol, { y: -i * lh, duration: 0.9, ease: 'expo.inOut', overwrite: true });
+        gsap.to(tagCol, { y: -i * th, duration: 0.9, ease: 'expo.inOut', overwrite: true });
+        bodies.forEach((b, j) => gsap.to(b, { opacity: j === i ? 1 : 0.3, duration: 0.5, overwrite: true }));
+        dots.forEach((d, j) => gsap.to(d, { backgroundColor: j <= i ? '#0E7C86' : '#FBF4EC', borderColor: j <= i ? '#0E7C86' : 'rgba(20,20,20,.2)', scale: j === i ? 1.5 : 1, duration: 0.4, overwrite: true }));
+      };
+      setActive(0);
+      items.forEach((it, i) => {
+        const title = it.querySelector('[data-g="item-title"]');
+        ScrollTrigger.create({ trigger: title, start: 'top 60%', end: 'bottom 60%',
+          onEnter: () => setActive(i), onEnterBack: () => setActive(i) });
+      });
+      const list = q('list'), lball = q('line-ball');
+      gsap.timeline({ scrollTrigger: { trigger: list, start: 'top 60%', end: 'bottom 60%', scrub: 0.6 } })
+        .to(q('line-fill'), { scaleY: 1, ease: 'none' }, 0)
+        .to(lball, { y: () => list.offsetHeight - lball.offsetHeight, ease: 'none' }, 0)
+        .to(q('line-ball-inner'), { rotation: 1440, ease: 'none' }, 0);
+
+      const cur = q('cursor');
+      if (cur && matchMedia('(pointer:fine)').matches) {
+        const xTo = gsap.quickTo(cur, 'x', { duration: 0.35, ease: 'power3' }), yTo = gsap.quickTo(cur, 'y', { duration: 0.35, ease: 'power3' });
+        const mv = e => { xTo(e.clientX); yTo(e.clientY); };
+        const ov = e => { const hit = e.target.closest('a,[data-g="ball"]'); gsap.to(cur, { scale: hit ? 3 : 1, duration: 0.3 }); };
+        window.addEventListener('pointermove', mv); window.addEventListener('pointerover', ov);
+        return () => { window.removeEventListener('pointermove', mv); window.removeEventListener('pointerover', ov); };
+      } else if (cur) cur.style.display = 'none';
+    });
+    ScrollTrigger.refresh();
+  }
+
+  renderVals() {
+    const ring = (cx, cy, rad, n, r, off = 0) => Array.from({ length: n }, (_, i) => { const a = off + (i / n) * Math.PI * 2; return { x: +(cx + Math.cos(a) * rad).toFixed(1), y: +(cy + Math.sin(a) * rad).toFixed(1), r }; });
+    const holes = [{ x: 50, y: 50, r: 4.5 }, ...ring(50, 50, 20, 6, 4), ...ring(50, 50, 36, 10, 3.6, 0.3)];
+    const pal = [
+      { c: '#F0592A', bg: '#F9CDB8', blob: '#F4B63A' },
+      { c: '#0E7C86', bg: '#CFE6E3', blob: '#F9CDB8' },
+      { c: '#C98E14', bg: '#FCE8C3', blob: '#0E7C86' },
+    ];
+    const raw = [
+      ['ARRIVAL', 'Spacious Parking', 'Pull in, park and play. Our parking sits right beside the courts, so you are never hauling gear down the street or circling for a spot before your game.', ['Parking steps from the courts', 'Room for cars and motorbikes', 'Easy drop-off at the entrance']],
+      ['COURTS', 'Quality Pickleball Courts', 'Four regulation-size courts with a consistent, true-bouncing surface, crisp lines and nets at official height — the same setup you would expect on match day.', ['4 regulation courts', 'Consistent, low-glare surface', 'Nets at official height']],
+      ['FACILITY', 'Premier Pickleball Facility', 'A space designed around the game, from court spacing to lighting, so every session feels smooth whether you are playing at sunrise or after work.', ['Bright court lighting for night play', 'Generous run-off between courts', 'Clean, well-kept facilities']],
+      ['BOOKING', 'Easy Online Booking', 'Pick a court, choose your time and confirm in a few taps. No phone calls, no waiting — your booking is locked in before you put your phone down.', ['See real-time availability', 'Book and pay online', 'Instant confirmation']],
+      ['PLAY', 'Open Play Sessions', 'No partner? No problem. Drop into open play, add your paddle to the queue and rotate through games with players around your level.', ['Walk in and join a game', 'Rotating doubles format', 'Great way to meet new players']],
+      ['GEAR', 'Paddle Rentals', 'Trying the sport for the first time or forgot your gear? Rent a paddle and balls at the front desk and you are ready to play in minutes.', ['Paddles for every level', 'Balls available on request', 'Perfect for first-timers']],
+      ['LOUNGE', 'Comfortable Waiting Area', 'Seating with a clear view of the action, so waiting for your court — or catching your breath between games — is part of the fun.', ['Seating with a view of the courts', 'Space to rest between games', 'Hang out with your crew']],
+      ['COMPETE', 'Leagues and Tournaments', 'Put your game to the test. From friendly socials to competitive brackets, our leagues and tournaments give every level something to play for.', ['Events for every skill level', 'Leagues and bracket tournaments', 'Bragging rights included']],
+    ];
+    const offers = raw.map((r, i) => ({
+      id: 'about-offer-' + (i + 1), anchor: 'offer-' + (i + 1), n: String(i + 1).padStart(2, '0'),
+      tag: r[0], title: r[1], d: r[2], points: r[3], ph: 'Drop a ' + r[1].toLowerCase() + ' photo',
+      dir: i % 2 ? 'row-reverse' : 'row', ...pal[i % 3],
+    }));
+    return {
+      showCursor: this.props.showCursor ?? true,
+      showNavLinks: this.state.w >= 900,
+      stageTop: this.state.w >= 900 ? '92px' : '80px',
+      stageH: this.state.w >= 900 ? 'calc(100vh - 116px)' : '38vh',
+      listPad: this.state.w >= 900 ? '72px' : '60px',
+      holes, offers,
+      values: [
+        { n: '01', t: 'Made for the game', d: 'Every detail, from the surface to the lighting, is chosen with pickleball players in mind.', bg: '#FDE3D8', c: '#F0592A' },
+        { n: '02', t: 'Easy for everyone', d: 'Book online in seconds, rent a paddle at the desk and step straight onto court.', bg: '#CFE6E3', c: '#0E7C86' },
+        { n: '03', t: 'Better together', d: 'Open play, leagues and events that turn strangers into regular playing partners.', bg: '#FCE8C3', c: '#C98E14' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
